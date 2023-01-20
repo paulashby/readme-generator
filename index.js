@@ -1,31 +1,8 @@
 const fs = require("fs");
-const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
-/*
-When a user enters the project title then it is displayed as the title of the README
-When a user enters a description, 
-installation instructions, 
-usage information, 
-contribution guidelines, 
-and test instructions 
-then this information is added to the sections of the README entitled 
-Description, 
-Installation, 
-Usage, 
-Contributing, and 
-Tests
-When a user chooses a license for their application 
-from a list of options then a badge for that license 
-is added near the top of the README and a notice is added 
-to the section of the README entitled License that explains 
-which license the application is covered under
-
-When a user enters their GitHub username then this is added to the section of the README entitled Questions, with a link to their GitHub profile
-When a user enters their email address then this is added to the section of the README entitled Questions, with instructions on how to reach them with additional questions
-*/
 const questions = [
     {
         type: 'input',
@@ -72,22 +49,28 @@ const questions = [
         type: 'list',
         name: 'license',
         message: "What license will your project use?",
-        choices: ["MIT", "Apache", "GPL", "BSD"]
+        choices: ["MIT", "Apache", "GPL", "BSD"],
         default: 0
     }
 
 ];
-/*
-Take type, name, message, choices[, default, filter, loop] properties. 
-(Note: default must be set to the index or value of one of the entries in choices)
-*/
+
 // function to write README file
 function writeToFile(fileName, data) {
+    
+    fs.writeFile(`${fileName}.md`, generateMarkdown(data), (err) => {
+        err ? console.log(err) : console.log("Success");
+    });
 }
 
 // function to initialize program
 function init() {
-
+    inquirer
+        .prompt(questions)
+        .then((data) => {
+            const { title } = data;
+            writeToFile(title, data);
+        });
 }
 
 // function call to initialize program
