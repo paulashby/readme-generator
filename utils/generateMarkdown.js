@@ -42,6 +42,7 @@ function generateMarkdown(data) {
       contents += `[${capitalised}](#${key})<br />`;
     }
 }
+contents += `[Questions](#questions)<br />`;
 
 // Assemble markup
 return `# ${title}
@@ -70,14 +71,13 @@ return `# ${title}
   
   ${tests}
   
-  ## Questions
-  
-Feel free to [email me](mailto:${email}?subject=${emailSubject}) if you have any queries. If you'd be interested in finding out about other projects I'm working on, please check out my [GitHub profile](https://github.com/${username}).
-  
   ## License
   
   [<img src="${badge}">](${licensePaths[license].license})
-`;
+  
+  ## Questions
+  
+  Feel free to [email me](mailto:${email}?subject=${emailSubject}) if you have any queries. If you'd be interested in finding out about other projects I'm working on, please check out my [GitHub profile](https://github.com/${username}).`;
 }
 
 module.exports = generateMarkdown;
