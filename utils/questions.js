@@ -3,17 +3,17 @@ const questions = [
     {
         type: 'input',
         name: 'username',
-        message: "What is your git user name?",
+        message: "Please enter your git user name?",
     },
     {
         type: 'input',
         name: 'email',
-        message: "What is your email address?",
+        message: "Please enter your email address?",
     },
     {
         type: 'input',
         name: 'title',
-        message: "What is the title of your project?",
+        message: "Please enter the title of your project?",
     },
     {
         type: 'input',
@@ -23,28 +23,28 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: "What are the installation instructions?",
+        message: "Describe the installation process",
     },
     {
         type: 'input',
         name: 'usage',
-        message: "How will your project be used?",
+        message: "Describe the steps to run the project",
     },
     {
         type: 'input',
         name: 'contributing',
-        message: "How can people contribute",
+        message: "Please explain how a developer can make a contribution to the project",
     },
     {
         type: 'input',
         name: 'tests',
-        message: "What command should be entered to run tests?",
-        default: "npm test"
+        message: "If you have tests in place, please explain how these can be run",
+        default: "N/A"
     },
     {
         type: 'list',
         name: 'license',
-        message: "What license will your project use?",
+        message: "Under which license would you like your project released?",
         choices: ["None", "MIT", "Apache 2", "GNU GPL 3", "BSD 3 Clause"],
         default: 0
     }
