@@ -18,8 +18,8 @@ function generateLicenseEntry(license) {
             badge: "License-BSD%203--Clause-blue.svg"
         }
     }
-    const key = license.replace(/ /g, "");  
-    console.log(`key: ${key}`);  
+    // Remove spaces from license string
+    const key = license.replace(/ /g, "");
     const badge = `https://img.shields.io/badge/${licensePaths[key].badge}`;
 
     return `[<img src="${badge}">](${licensePaths[key].license})`;
