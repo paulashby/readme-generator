@@ -6,7 +6,7 @@ function generateMarkdown(data) {
   // Destructure data parameter
   const { username, email, title, description, installation, usage, contributing, tests, license } = data;
   // Handle spaces in title
-  const emailSubject = queryString.escape(title);
+  const emailSubject = queryString.escape(`${title} query from GitHub`);
   let licenseBadge = "";
   let licenseNotice = "None";
 
