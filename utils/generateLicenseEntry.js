@@ -1,4 +1,4 @@
-function generateLicenseEntry(license) {
+function generateLicenseBadge(license) {
     // Configure license options
     const licensePaths = {
         MIT: {
@@ -21,8 +21,11 @@ function generateLicenseEntry(license) {
     // Remove spaces from license string
     const key = license.replace(/ /g, "");
     const badge = `https://img.shields.io/badge/${licensePaths[key].badge}`;
-
-    return `[<img src="${badge}">](${licensePaths[key].license})`;
+    
+    return {
+        badge: `[<img src="${badge}">](${licensePaths[key].license})`,
+        notice: `Released under the [${license}](${licensePaths[key].license}) license.`
+    }
 }
 
-module.exports = generateLicenseEntry;
+module.exports = generateLicenseBadge;

@@ -7,17 +7,20 @@ function generateMarkdown(data) {
   const { username, email, title, description, installation, usage, contributing, tests, license } = data;
   // Handle spaces in title
   const emailSubject = queryString.escape(title);
-  let licenseEntry = license;
+  let licenseBadge = "";
+  let licenseNotice = "None";
 
-  if (licenseEntry !== "None") {
+  if (license !== "None") {
     const generateLicenseEntry = require("./generateLicenseEntry");
-    licenseEntry = generateLicenseEntry(license);
+    const licenseEntry = generateLicenseEntry(license);
+    licenseBadge = licenseEntry.badge;
+    licenseNotice = licenseEntry.notice;
   } 
 
   let contents = "";
 
   for (const [key, value] of Object.entries(data)) {
-    // Don't want sections for username or email
+    // Omit username and email
     if (key !== "username" && key !== "email" && key !== "title") {
       // Normalise key case
       const lc = key.toLowerCase();
@@ -36,7 +39,9 @@ let testStr = tests === "N/A" ? tests : `\`\`\`${tests}\`\`\``;
 // Assemble markup
 return `# ${title}
 
-## Table of Contents
+  ${licenseBadge}
+
+  ## Table of Contents
 
   ${contents}
 
@@ -62,7 +67,7 @@ return `# ${title}
   
   ## License
   
-  ${licenseEntry}
+  ${licenseNotice}
   
   ## Questions
   
