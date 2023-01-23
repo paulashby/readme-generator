@@ -30,7 +30,8 @@ function generateMarkdown(data) {
 contents += `[Questions](#questions)<br />`;
 
 // Set tests as code if not n/a
-let testStr = tests === "N/A" ? tests : `    ${tests}`;
+let testStr = tests === "N/A" ? tests : `\`\`\`${tests}\`\`\``;
+
 
 // Assemble markup
 return `# ${title}
