@@ -38,7 +38,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: "If you have tests in place, please explain how these can be run",
+        message: "Please enter the command used to run your tests",
         default: "N/A"
     },
     {
