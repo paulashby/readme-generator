@@ -8,7 +8,7 @@
 
   ## Description
 
-  A command line node app that generates README.md files based on user input.<br /><br />One task that's required of a developer for every project is the creation of a quality README file. These files generally follow a fairly predictable structure, so their creation can be automated to streamline this part of the development process.<br /><br />The project has given me an opportunity to get more familiar with the node inquirer package and to delve more deeply into some of the nuances of markdown formatting.
+  A command line node app that generates README markdown files based on user input.<br /><br />One task that's required of a developer for every project is the creation of a quality README file. These files generally follow a fairly predictable structure, so their creation can be automated to streamline this part of the development process.<br /><br />This project does just that and into the bargain, has given me an opportunity to get more familiar with the node inquirer package and some of the nuances of markdown formatting.
   
   ## Installation
   
@@ -16,7 +16,7 @@
   
   ## Usage
   
-  Start the app with<br />```node index```<br />Then enter the details for your README as prompted.<br /><br />**New line:**<br />```<br />```<br /><br />**Format line as code:**<br />```<br />/`/`/`Code/`/`/`<br />```<br />
+  Start the app with<br />```node index```<br />Then enter the details for your README as prompted.<br /><br />**New line:**<br />```<br />```<br /><br />**Format line as code:**<br />````<br />```Line of code```<br />````<br />
   
   ## Contributing
   
@@ -33,3 +33,6 @@
   ## Questions
   
   Feel free to [email me](mailto:paul@primitive.co?subject=README%20Generator%20query%20from%20GitHub) with any queries. If you'd like to see some of my other projects, my GitHub user name is [paulashby](https://github.com/paulashby).
+
+  ## Demo
+  https://watch.screencastify.com/v/57yDMkGOguk4khiYuvX1
