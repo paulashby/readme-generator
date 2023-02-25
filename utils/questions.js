@@ -34,6 +34,7 @@ const questions = [
         type: 'input',
         name: 'contributing',
         message: "Please explain how a developer can make a contribution to the project",
+        default: "If you would like to make a contribution to the app, simply fork the respository and submit a Pull Request. If I like it, I may include it in the codebase."
     },
     {
         type: 'input',
