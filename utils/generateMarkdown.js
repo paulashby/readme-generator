@@ -71,7 +71,7 @@ return `# ${title}
   
   ## Questions
   
-  Feel free to [email me](mailto:${email}?subject=${emailSubject}) with any queries. If you'd like to see some of my other projects, my GitHub user name is [${username}](https://github.com/${username}).`;
+  Feel free to [email me](mailto:${email}?subject=${emailSubject}) with any queries.`;
 }
 
 module.exports = generateMarkdown;
